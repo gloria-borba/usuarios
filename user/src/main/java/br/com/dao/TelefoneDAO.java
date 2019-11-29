@@ -1,6 +1,6 @@
 package br.com.dao;
 
-import br.com.conexao.Conexao;
+import br.com.util.Conexao;
 import br.com.model.Telefone;
 
 import java.sql.Connection;
