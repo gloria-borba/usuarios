@@ -9,7 +9,7 @@ public class Conexao {
 	private static String USER = "admin";
 	private static String PASS = "admin";
 
-	public Connection getConnection() {
+	public static Connection getConnection() {
 		System.out.println("Conectando ao banco de dados");
 		try {
 			Class.forName("org.h2.Driver");
