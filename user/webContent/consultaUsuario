@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link href="#{request.contextPath}/css/primeface.css" rel="stylesheet"
+          type="text/css" />
+</h:head>
+<h:body>
+
+    <ui:include src="header.xhtml"/>
+
+    <h:form>
+        <div class="consulta">
+            <p:growl id="msgs" showDetail="false" />
+
+            <div>
+                <p:fieldset>
+                    <p:accordionPanel multiple="true"
+                                      value="#{usuarioBean.listarUsuarios}"
+                                      var="usuarios">
+                        <p:tab title="Usuários">
+                            <h:panelGrid columns="2" style="margin-bottom:10px"
+                                         cellpadding="5">
+                                Nome:<h:outputText value="#{usuarios.nome}" />
+                                Email:<h:outputText value="#{usuarios.email}" />
+                            </h:panelGrid>
+                            <h:panelGrid columns="6" cellpadding="10">
+                                <p:commandButton
+                                        action="#{usuarioBean.telaAtualizarUsuario}"
+                                        value="Atualizar Dados">
+                                    <f:setPropertyActionListener value="#{usuarios}"
+                                                                 target="#{usuarioBean.usuarioSelecionado}" />
+                                </p:commandButton>
+                                <p:commandButton update="@form" value="Excluir Registro"
+                                                 action="#{usuarioBean.remover}">
+                                    <f:setPropertyActionListener value="#{usuarios}"
+                                                                 target="#{usuarioBean.usuarioSelecionado}" />
+                                    <p:confirm header="Excluir Registro"
+                                               message="Tem certeza que deseja excluir o registro?"
+                                               icon="ui-icon-alert" />
+                                </p:commandButton>
+                            </h:panelGrid>
+                        </p:tab>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Sim" type="button"
+                                             styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                            <p:commandButton value="Não" type="button"
+                                             styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </p:accordionPanel>
+                </p:fieldset>
+
+            </div>
+        </div>
+    </h:form>
+</h:body>
+</html>

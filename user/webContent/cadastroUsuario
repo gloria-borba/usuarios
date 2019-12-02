@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link href="#{request.contextPath}/css/primeface.css" rel="stylesheet"
+          type="text/css" />
+</h:head>
+<h:body>
+    <h:form>
+        <p:growl id="msgs" showDetail="false" autoUpdate="true" />
+        <div class="cadastro">
+            <p:fieldset legend="Cadastro">
+
+                <h:outputLabel value="Nome: " />
+                <p:inputText value="#{usuarioBean.usuario.nome}" size="60"
+                             required="true" requiredMessage="Campo nome requerido" />
+
+                <h:panelGrid columns="4" style="margin-bottom:10px" cellpadding="5">
+
+                    <h:outputLabel value="Email:" />
+                    <p:inputMask id="email" value="#{usuarioBean.usuario.email}"
+                                 required="true"
+                                 requiredMessage="Campo Email é obrigatorio" />
+
+                    <h:outputText value="Senha: " />
+                    <p:password id="senha" value="#{usuarioBean.usuario.senha}"
+                                feedback="true" size="12" minLenght="8" maxlength="16">
+                        <f:validateLength minimum="6"></f:validateLength>
+                    </p:password>
+
+                </h:panelGrid>
+
+                <div class="btn-cad">
+                    <br />
+                    <p:commandButton value="Confirmar" update="@form"
+                                     actionListener="#{usuarioBean.cadastrarUsuario}" />
+                    <p:commandButton update="@form" actionListener="#{usuarioBean.cancelar}"
+                                     value="Cancelar" immediate="true" action="index" />
+                </div>
+            </p:fieldset>
+        </div>
+    </h:form>
+</h:body>
+</html>

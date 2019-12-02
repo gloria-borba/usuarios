@@ -19,8 +19,8 @@
             <div class="user"></div>
 
             <h:panelGrid columns="2" position="center">
-                <p:inputMask id="cpf" placeholder="CPF"
-                             value="#{loginBean.cpf}" required="true" requiredMessage="Informe o CPF!"/>
+                <p:inputMask id="email" placeholder="EMAIL"
+                             value="#{loginBean.email}" required="true" requiredMessage="Informe o email!"/>
                 <p:password id="nonFeedback" value="#{loginBean.senha}"
                             placeholder="Senha" required="true" requiredMessage="Informe a senha!"/>
 
@@ -30,7 +30,7 @@
                              action="#{loginBean.logar}" />
 
             <div class="register">
-                <a href="cadastroPaciente.xhtml">Registre-se aqui.</a>
+                <a href="cadastroUsuario.xhtml">Registre-se aqui.</a>
             </div>
         </div>
     </h:form>

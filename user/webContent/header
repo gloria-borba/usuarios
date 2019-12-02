@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link href="#{request.contextPath}/css/primeface.css" rel="stylesheet"
+          type="text/css" />
+</h:head>
+<h:body>
+    <p:menubar>
+        <p:menuitem id="home" value="Home" url="homeUsuario.xhtml"
+                    icon="ui-icon-home" />
+
+        <p:submenu id="user" label="#{loginBean.usuarioSessao.nome}"
+                   icon="ui-icon-person">
+            <p:menuitem value="Pesquisar" url="consultaUsuario.xhtml" />
+            <p:menuitem value="Perfil" url="perfilUsuario.xhtml" />
+        </p:submenu>
+
+    </p:menubar>
+
+    <div class="btn-sair">
+        <p:commandButton value="Sair" action="#{loginBean.logOut}" />
+    </div>
+
+</h:body>
+</html>

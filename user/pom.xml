@@ -10,6 +10,20 @@
     <packaging>war</packaging>
 
     <dependencies>
+        <!-- Núcleo do Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.4.Final</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Implementação de EntityManager da JPA -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.4.4.Final</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- BD H2 -->
         <dependency>
             <groupId>com.h2database</groupId>

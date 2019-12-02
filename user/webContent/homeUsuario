@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link href="#{request.contextPath}/css/primeface.css" rel="stylesheet"
+          type="text/css" />
+</h:head>
+<h:body>
+
+    <ui:include src="header.xhtml" />
+
+    <div class="home">
+        <h:form>
+            <p:growl id="msgs" showDetail="false" autoUpdate="true" />
+            <p:fieldset legend="Dados">
+                <h:panelGrid columns="8" cellpadding="7">
+
+                    Nome:<h:outputText
+                        value="#{usuarioBean.usuario.nome}" />
+                    Email:<h:outputText
+                        value="#{usuarioBean.usuario.email}" />
+                </h:panelGrid>
+            </p:fieldset>
+        </h:form>
+
+        <div class="btn-home">
+
+            <h:panelGrid columns="6" cellpadding="8">
+                <p:commandButton value="Adicionar Telefone"
+                                 action="#{telefoneBean.telaAdicionarTelefone}" />
+            </h:panelGrid>
+
+        </div>
+
+        <div>
+            <p:fieldset legend="Telefones">
+                <h:form>
+                    <p:accordionPanel  multiple="true"
+                                      value="#{medicamentoAdmBean.paciente.medicamentosAdm}"
+                                      var="medAdm">
+                        <p:tab title="Telefones">
+                            <h:panelGrid columns="3" cellpadding="10">
+                               DDD:<h:outputText value="#{medAdm.sintoma.nome}" />
+                                Número:<h:outputText value="#{medAdm.remedio.nome}" />
+                                Tipo:<h:outputText value="#{medAdm.qtd}" />
+                            </h:panelGrid>
+                            <div class="btn-home-grid">
+
+                                <br /> <br />
+                                <p:commandButton
+                                        action="#{medicamentoAdmBean.telaAlterarMedicamento}"
+                                        value="Atualizar Dados">
+                                    <f:setPropertyActionListener value="#{medAdm}"
+                                                                 target="#{medicamentoAdmBean.medicamentoAdmSelecionado}" />
+                                </p:commandButton>
+                                <p:commandButton update="registros" value="Excluir Registro"
+                                                 action="#{medicamentoAdmBean.excluirMedicamentoAdm}">
+                                    <f:setPropertyActionListener value="#{medAdm}"
+                                                                 target="#{medicamentoAdmBean.medicamentoAdmSelecionado}" />
+                                    <p:confirm header="Excluir Registro"
+                                               message="Tem certeza que deseja excluir o registro?"
+                                               icon="ui-icon-alert" />
+                                </p:commandButton>
+
+                            </div>
+                        </p:tab>
+
+                    </p:accordionPanel>
+                    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                        <p:commandButton value="Sim" type="button"
+                                         styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                        <p:commandButton value="Não" type="button"
+                                         styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                    </p:confirmDialog>
+                </h:form>
+            </p:fieldset>
+        </div>
+    </div>
+</h:body>
+</html>

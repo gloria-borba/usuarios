@@ -88,8 +88,6 @@ public class UsuarioDAO {
 			usuario.setSenha(result.getString("SENHA"));
 		}
 
-		//       Todo telefones
-
 		Conexao.close(conn);
 
 		return usuario;
@@ -147,8 +145,6 @@ public class UsuarioDAO {
 			usuario.setEmail(rs.getString("EMAIL"));
 			usuario.setNome(rs.getString("NOME"));
 			usuario.setSenha(rs.getString("SENHA"));
-
-			//TODO TELEFONE
 
 			lista.add(usuario);
 		}

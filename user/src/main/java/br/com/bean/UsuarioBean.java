@@ -1,5 +1,7 @@
 package br.com.bean;
 
+import java.util.List;
+
 import br.com.dao.UsuarioDAO;
 import br.com.model.Usuario;
 import br.com.util.Mensagens;
@@ -16,6 +18,7 @@ public class UsuarioBean {
 	private UsuarioDAO dao;
 	private Usuario usuario;
 	private Mensagens msg = new Mensagens();
+	private Usuario usuarioSelecionado;
 
 	@ManagedProperty(value = "#{loginBean}")
 	private LoginBean loginBean;
@@ -36,6 +39,9 @@ public class UsuarioBean {
 
 	}
 
+	/**
+	 * Cadastra um usuário
+	 */
 	public void cadastrarUsuario() {
 		try {
 			if (dao.buscar(usuario.getEmail()).getEmail() == null) {
@@ -52,7 +58,38 @@ public class UsuarioBean {
 		}
 	}
 
-	public void alterarPaciente() {
+	/**
+	 * Remover usuário
+	 */
+	public void remover() {
+		try {
+			dao.remove(this.usuario.getEmail());
+			msg.addMensagemSucesso("Registro removido com sucesso!");
+		} catch (Exception e) {
+			msg.addMensagemErro("Não foi possível atualizar o registro.");
+			e.printStackTrace();
+		}
+
+	}
+
+	/**
+	 * Lista todos os usuários
+	 * @return List<Usuario>
+	 */
+	public List<Usuario> listarUsuarios() {
+		try {
+			return dao.listar();
+		} catch (Exception e) {
+			msg.addMensagemErro("Não foi possível listar os usuários!");
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	/**
+	 * Atualiza os dados do usuário
+	 */
+	public void alterarUsuario() {
 		try {
 			dao.atualizar(this.usuario);
 		} catch (Exception e) {
@@ -62,4 +99,14 @@ public class UsuarioBean {
 		}
 		msg.addMensagemSucesso("Dados atualizados com sucesso!");
 	}
+
+	public String cancelar() {
+		this.usuario = new Usuario();
+		return "window.history.back()";
+	}
+
+	public String telaAtualizarUsuario() {
+		return "atualizarUsuario";
+	}
+
 }
