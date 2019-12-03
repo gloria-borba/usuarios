@@ -107,51 +107,6 @@ ul {
 	background-color: #fff;
 }
 
-.ui-datepicker {
-	width: 17em;
-	padding: .2em .2em 0;
-	background-color: white;
-	border: 1px solid #737373;
-	border-radius: 2%;
-}
-
-.ui-datepicker-header {
-	background-color: #4d7498;
-	border: 1px solid grey;
-	color: #ffffff;
-	font-size: 100%;
-}
-
-.ui-datepicker-prev {
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.ui-datepicker-next {
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.ui-datepicker .ui-state-default {
-	border: .5px solid #c0c0c0;
-	background-color: #e1eaf2;
-}
-
-.ui-datepicker .ui-state-default:link {
-	color: black;
-	text-decoration: none;
-}
-
-.ui-datepicker .ui-state-default:visited {
-	color: black;
-	text-decoration: none;
-}
-
-.ui-datepicker .ui-state-default:active {
-	color: black;
-	text-decoration: none;
-}
-
 .ui-selectonemenu-panel .ui-selectonemenu-list {
 	background-color: #EBF0F5;
 }
