@@ -22,8 +22,7 @@ public class UsuarioDAO {
 		Connection conn = Conexao.getConnection();
 
 		try {
-			PreparedStatement statement = conn.prepareStatement("INSERT INTO USUARIO (cd_usuario,nome,email,senha) VALUES(?,?,?,?)");
-			// TODO ADICIONAR PELA SEQUENCE (conn.prepareStatement("SEQ_USUARIO.nextval"));
+			PreparedStatement statement = conn.prepareStatement("INSERT INTO USUARIO (nome,email,senha) VALUES(?,?,?)");
 			statement.setString(1, usuario.getNome());
 			statement.setString(2, usuario.getEmail());
 			statement.setString(3, usuario.getSenha());

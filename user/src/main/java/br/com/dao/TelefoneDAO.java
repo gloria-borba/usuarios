@@ -21,8 +21,7 @@ public class TelefoneDAO {
 
         try {
             PreparedStatement statement = conn.prepareStatement(
-                    "INSERT INTO TELEFONE (cd_telefone ,ddd,numero,tipo, usuario) VALUES(?,?,?,?,?)");
-			// TODO ADICIONAR PELA SEQUENCE (conn.prepareStatement("SEQ_TELEFONE.nextval"));
+                    "INSERT INTO TELEFONE (ddd,numero,tipo, usuario) VALUES(?,?,?,?)");
             statement.setLong(1, telefone.getDdd());
             statement.setString(2, telefone.getNumero());
             statement.setString(3, telefone.getTipo());
