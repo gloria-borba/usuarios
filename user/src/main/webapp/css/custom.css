@@ -1,0 +1,89 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Nunito', sans-serif;
+}
+
+html {
+	font-size: 90%;
+}
+
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-y: none;
+}
+
+.btn-home {
+	margin-left: calc(45% - 50px);
+	margin-top: 10px;
+}
+
+.btn-home-grid {
+	margin-left: calc(40% - 50px);
+}
+
+.btn-sair {
+	position: relative;
+	margin-right: 10px;
+	margin-top: 5px;
+	width: 4vw;
+	float: right;
+}
+
+.btn-cad {
+	margin-left: calc(40% - 50px);
+}
+
+.btn-reg {
+	margin-left: calc(35% - 50px);
+}
+
+.btn-perfil {
+	margin-left: calc(15% - 50px);
+}
+
+.cadastro {
+	width: 49vw;
+	margin: 0 auto;
+	margin-top: 90px;
+}
+
+.conteudo-cad {
+	width: 40vw;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.perfil {
+	width: 60vw;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+.add-reg, .consulta {
+	width: 75vw;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.home {
+	width: 85vw;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.coluna-add-reg {
+	width: 35vw;
+	height: 50vh;
+	position: relative;
+	display: inline-block;
+}
+
+.coluna-perfil {
+	width: 25vw;
+	height: 35vh;
+	position: relative;
+	display: inline-block;
+}

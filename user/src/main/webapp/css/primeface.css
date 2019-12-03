@@ -1,0 +1,185 @@
+body {
+	background-color: #e1eaf2;
+	background-repeat: no-repeat;
+	background-position: 88vw 75vh;
+	background-size: 10%;
+}
+
+.ui-fieldset {
+	background-color: #e2e2e2;
+	border-radius: 12px;
+}
+
+ul {
+	background-color: #e2e2e2;
+}
+
+.ui-fieldset .ui-fieldset-legend {
+	background-color: #4d7498;
+	border: 1px solid grey;
+	border-radius: 10px;
+	color: #ffffff;
+	font-size: 115%;
+}
+
+.ui-menubar, .ui-menu-list, .ui-menuitem, .ui-menuitem-text {
+	background-color: #1c496a;
+	border-radius: 2px;
+	color: #ffffff;
+	font-size: 105%;
+	font-weight: bolder;
+}
+
+.ui-menu .ui-menuitem-link {
+	position: relative;
+	float: right;	
+    margin-right: 5px;
+}
+
+.ui-menu .ui-menu-parent .ui-menu-child {
+    width: 8vw;
+    padding: .3em;
+    position: relative;
+    text-decoration: none;
+    list-style: none;
+    font-size: small;
+    float: right;
+    text-align: right;
+}
+
+.ui-menubar .ui-menuitem-text:hover {
+	color: #b2b2b2;
+}
+
+.ui-radiobutton .ui-radiobutton-box {
+	background-color: #b2b2b2;
+	border: 0.5px solid grey;
+}
+
+.ui-radiobutton .ui-state-active {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	background-image: url("../img/circle.png");
+}
+
+.ui-button {
+	border-radius: 15px;
+	background-color: #ffffff;
+}
+
+.ui-button:hover {
+	box-shadow: 0 0 5px #54585C;
+}
+
+.ui-button-text-icon-left .ui-button-text {
+	background-size: 15%;
+	background-repeat: no-repeat;
+	background-position: left;
+	margin-left: 10px;
+	padding: .3em 1em .3em 2.1em;
+}
+
+.ui-selectonemenu {
+	opacity: 1.0;
+	border: 1px solid #999;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.ui-selectonemenu-trigger {
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: left;
+}
+
+.ui-selectonmenu-item:hover {
+	background-color: #ff0000;
+}
+
+.ui-accordion .ui-accordion-header {
+	background-color: #4d7498;
+	border-radius: 5px;
+	color: white;
+}
+
+.ui-password-info, .ui-password-panel, .ui-password-meter {
+	background-color: #fff;
+}
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	background-color: white;
+	border: 1px solid #737373;
+	border-radius: 2%;
+}
+
+.ui-datepicker-header {
+	background-color: #4d7498;
+	border: 1px solid grey;
+	color: #ffffff;
+	font-size: 100%;
+}
+
+.ui-datepicker-prev {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ui-datepicker-next {
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ui-datepicker .ui-state-default {
+	border: .5px solid #c0c0c0;
+	background-color: #e1eaf2;
+}
+
+.ui-datepicker .ui-state-default:link {
+	color: black;
+	text-decoration: none;
+}
+
+.ui-datepicker .ui-state-default:visited {
+	color: black;
+	text-decoration: none;
+}
+
+.ui-datepicker .ui-state-default:active {
+	color: black;
+	text-decoration: none;
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-list {
+	background-color: #EBF0F5;
+}
+
+.ui-selectonemenu-panel .ui-selectonemenu-list-item:hover {
+	background-color: #c0c0c0;
+	opacity: 1.0;
+}
+
+#home {
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 2em;
+	padding-top: .7em;
+	width: 7vw;
+	height: 5vh;
+}
+
+#user {
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 2em;
+    padding-top: .2em;
+    right: 10px;
+    width: 20vw;
+    height: 5vh;
+    text-align: right;
+    position: absolute;
+}
