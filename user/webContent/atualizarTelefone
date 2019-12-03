@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+    <link href="https://fonts.googleapis.com/css?family=Nunito"
+          rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link href="#{request.contextPath}/css/primeface.css" rel="stylesheet"
+          type="text/css" />
+</h:head>
+<h:body>
+
+    <ui:include src="header.xhtml"/>
+
+    <div class="add-reg">
+        <h:form>
+            <p:growl id="msgs" showDetail="false" />
+            <p:fieldset legend="Atualizar Telefone">
+                <div class="coluna-add-reg">
+
+                    <h:panelGrid columns="2" cellpadding="10">
+
+                        DDD:<p:inputText size="5"
+                                         value="#{telefoneBean.telefoneSelecionado.ddd}" />
+                        Número:<p:inputText size="10"
+                                            value="#{telefoneBean.telefoneSelecionado.numero}" />
+                        Tipo<p:inputText size="20"
+                                         value="#{telefoneBean.telefoneSelecionado.tipo}" />
+
+                    </h:panelGrid>
+                </div>
+
+                <div class="coluna-add-reg">
+
+                    <div class="btn-reg">
+                        <h:panelGrid columns="6" cellpadding="10">
+                            <p:commandButton value="Salvar" update="@form"
+                                             actionListener="#{telefoneBean.alterarTelefone}" />
+                            <p:commandButton value="Voltar" action="#{loginBean.voltar()}" />
+                        </h:panelGrid>
+                    </div>
+
+                </div>
+            </p:fieldset>
+        </h:form>
+    </div>
+
+</h:body>
+</html>

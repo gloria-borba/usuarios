@@ -23,7 +23,7 @@ public class LoginBean {
 			this.usuarioSessao = usuarioDAO.buscar(email);
 
 		} catch (Exception e) {
-			msg.addMensagemErro("Ocorreu um erro, n√£o foi poss√≠vel realizar o login!");
+			msg.addMensagemErro("Ocorreu um erro, n„o foi possÌvel realizar o login!");
 			e.printStackTrace();
 			return null;
 		}
@@ -32,7 +32,7 @@ public class LoginBean {
 				.equals(this.usuarioSessao.getSenha()))) {
 			return "homePaciente";
 		} else {
-			msg.addMensagemErro("N√£o foi poss√≠vel realizar o login. Verifique o CPF e senha!");
+			msg.addMensagemErro("N√£o foi possÌvel realizar o login. Verifique o email e senha!");
 			return null;
 		}
 

@@ -40,30 +40,30 @@ public class UsuarioBean {
 	}
 
 	/**
-	 * Cadastra um usu√°rio
+	 * Cadastra um usu·rio
 	 */
 	public void cadastrarUsuario() {
 		try {
 			if (dao.buscar(usuario.getEmail()).getEmail() == null) {
 				dao.inserir(this.usuario);
 				this.usuario = new Usuario();
-				msg.addMensagemSucesso("Usu√°rio cadastrado com sucesso!");
+				msg.addMensagemSucesso("Usu·rio cadastrado com sucesso!");
 			} else {
-				msg.addMensagemErro("Email j√° cadastrado");
+				msg.addMensagemErro("Email j· cadastrado");
 			}
 
 		} catch (Exception e) {
-			msg.addMensagemErro("N√£o foi poss√≠vel realizar o cadastro!");
+			msg.addMensagemErro("N√o foi possÌvel realizar o cadastro!");
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * Remover usu√°rio
+	 * Remover usu·rio
 	 */
 	public void remover() {
 		try {
-			dao.remove(this.usuario.getEmail());
+			dao.remove(this.usuario.getId());
 			msg.addMensagemSucesso("Registro removido com sucesso!");
 		} catch (Exception e) {
 			msg.addMensagemErro("N√£o foi poss√≠vel atualizar o registro.");
@@ -73,7 +73,7 @@ public class UsuarioBean {
 	}
 
 	/**
-	 * Lista todos os usu√°rios
+	 * Lista todos os usu·rios
 	 * @return List<Usuario>
 	 */
 	public List<Usuario> listarUsuarios() {
@@ -87,7 +87,7 @@ public class UsuarioBean {
 	}
 
 	/**
-	 * Atualiza os dados do usu√°rio
+	 * Atualiza os dados do usu·rio
 	 */
 	public void alterarUsuario() {
 		try {

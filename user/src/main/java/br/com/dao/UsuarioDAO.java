@@ -13,7 +13,7 @@ import java.util.List;
 public class UsuarioDAO {
 
 	/**
-	 * Insere um usuÃ¡rio
+	 * Insere um usuário
 	 *
 	 * @param usuario
 	 * @throws Exception
@@ -22,7 +22,8 @@ public class UsuarioDAO {
 		Connection conn = Conexao.getConnection();
 
 		try {
-			PreparedStatement statement = conn.prepareStatement("INSERT INTO USUARIO (nome,email,senha) VALUES(?,?,?)");
+			PreparedStatement statement = conn.prepareStatement("INSERT INTO USUARIO (cd_usuario,nome,email,senha) VALUES(?,?,?,?)");
+			// TODO ADICIONAR PELA SEQUENCE (conn.prepareStatement("SEQ_USUARIO.nextval"));
 			statement.setString(1, usuario.getNome());
 			statement.setString(2, usuario.getEmail());
 			statement.setString(3, usuario.getSenha());
@@ -41,18 +42,18 @@ public class UsuarioDAO {
 	}
 
 	/**
-	 * Remove o usuÃ¡rio pelo email
+	 * Remove o usuário pelo id
 	 *
-	 * @param email
+	 * @param id
 	 * @throws Exception
 	 */
-	public void remove(String email) throws Exception {
+	public void remove(Long id) throws Exception {
 		Connection conn = Conexao.getConnection();
 
 		try {
 
-			PreparedStatement statement = conn.prepareStatement("DELETE FROM USUARIO WHERE USUARIO.EMAIL = ?");
-			statement.setString(1, email);
+			PreparedStatement statement = conn.prepareStatement("DELETE FROM USUARIO WHERE CD_USUARIO = ?");
+			statement.setLong(1, id);
 
 			statement.execute();
 			conn.commit();
@@ -68,7 +69,7 @@ public class UsuarioDAO {
 	}
 
 	/**
-	 * Buscar o usuÃ¡rio pelo email
+	 * Buscar o usuário pelo email
 	 *
 	 * @param email
 	 * @return
@@ -94,7 +95,7 @@ public class UsuarioDAO {
 	}
 
 	/**
-	 * Atualizar usuÃ¡rio
+	 * Atualizar usuário
 	 *
 	 * @param usuario
 	 * @throws Exception
@@ -105,12 +106,14 @@ public class UsuarioDAO {
 		try {
 
 			PreparedStatement statement = conn
-					.prepareStatement("UPDATE USUARIO SET EMAIL = ?,NOME = ?,SENHA = ? WHERE EMAIL = ?");
+					.prepareStatement("UPDATE USUARIO SET EMAIL = ?,NOME = ?,SENHA = ? WHERE CD_USUARIO = ?");
 
 			statement.setString(1, usuario.getEmail());
 			statement.setString(2, usuario.getNome());
 			statement.setString(3, usuario.getSenha());
+			statement.setLong(4, usuario.getId());
 
+			
 			statement.execute();
 
 			conn.commit();
@@ -126,7 +129,7 @@ public class UsuarioDAO {
 	}
 
 	/**
-	 * Listar todos os usuÃ¡rios
+	 * Listar todos os usuários
 	 *
 	 * @return
 	 * @throws Exception

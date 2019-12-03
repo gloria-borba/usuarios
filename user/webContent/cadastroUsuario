@@ -27,7 +27,7 @@
                     <h:outputLabel value="Email:" />
                     <p:inputMask id="email" value="#{usuarioBean.usuario.email}"
                                  required="true"
-                                 requiredMessage="Campo Email é obrigatorio" />
+                                 requiredMessage="Campo Email obrigatorio" />
 
                     <h:outputText value="Senha: " />
                     <p:password id="senha" value="#{usuarioBean.usuario.senha}"

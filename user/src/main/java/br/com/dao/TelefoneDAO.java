@@ -21,7 +21,8 @@ public class TelefoneDAO {
 
         try {
             PreparedStatement statement = conn.prepareStatement(
-                    "INSERT INTO TELEFONE (ddd,numero,tipo, usuario) VALUES(?,?,?,?)");
+                    "INSERT INTO TELEFONE (cd_telefone ,ddd,numero,tipo, usuario) VALUES(?,?,?,?,?)");
+			// TODO ADICIONAR PELA SEQUENCE (conn.prepareStatement("SEQ_TELEFONE.nextval"));
             statement.setLong(1, telefone.getDdd());
             statement.setString(2, telefone.getNumero());
             statement.setString(3, telefone.getTipo());
@@ -45,7 +46,7 @@ public class TelefoneDAO {
      * @param telefone
      * @throws Exception
      */
-    public void atualizar(Telefone telefone, Long id) throws Exception {
+    public void atualizar(Telefone telefone) throws Exception {
         Connection conn = Conexao.getConnection();
         try{
             PreparedStatement statement = conn.prepareStatement(
@@ -54,7 +55,7 @@ public class TelefoneDAO {
             statement.setLong(1, telefone.getDdd());
             statement.setString(2, telefone.getNumero());
             statement.setString(3, telefone.getTipo());
-            statement.setLong(4, id);
+            statement.setLong(4, telefone.getId());
 
             statement.execute();
             conn.commit();

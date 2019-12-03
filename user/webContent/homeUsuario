@@ -44,28 +44,28 @@
             <p:fieldset legend="Telefones">
                 <h:form>
                     <p:accordionPanel  multiple="true"
-                                      value="#{medicamentoAdmBean.paciente.medicamentosAdm}"
-                                      var="medAdm">
+                                      value="#{telefoneBean.usuario.telefones}"
+                                      var="telefone">
                         <p:tab title="Telefones">
                             <h:panelGrid columns="3" cellpadding="10">
-                               DDD:<h:outputText value="#{medAdm.sintoma.nome}" />
-                                NÃºmero:<h:outputText value="#{medAdm.remedio.nome}" />
-                                Tipo:<h:outputText value="#{medAdm.qtd}" />
+                               DDD:<h:outputText value="#{telefone.ddd}" />
+                                Número:<h:outputText value="#{telefone.numero}" />
+                                Tipo:<h:outputText value="#{telefone.tipo}" />
                             </h:panelGrid>
                             <div class="btn-home-grid">
 
                                 <br /> <br />
                                 <p:commandButton
-                                        action="#{medicamentoAdmBean.telaAlterarMedicamento}"
-                                        value="Atualizar Dados">
-                                    <f:setPropertyActionListener value="#{medAdm}"
-                                                                 target="#{medicamentoAdmBean.medicamentoAdmSelecionado}" />
+                                        action="#{telefoneBean.telaAtualizarTelefone}"
+                                        value="Atualizar Telefone">
+                                    <f:setPropertyActionListener value="#{telefone}"
+                                                                 target="#{telefoneBean.telefoneSelecionado}" />
                                 </p:commandButton>
-                                <p:commandButton update="registros" value="Excluir Registro"
-                                                 action="#{medicamentoAdmBean.excluirMedicamentoAdm}">
-                                    <f:setPropertyActionListener value="#{medAdm}"
-                                                                 target="#{medicamentoAdmBean.medicamentoAdmSelecionado}" />
-                                    <p:confirm header="Excluir Registro"
+                                <p:commandButton update="registros" value="Excluir Telefone"
+                                                 action="#{telefoneBean.excluirTelefone}">
+                                    <f:setPropertyActionListener value="#{telefone}"
+                                                                 target="#{telefoneBean.telefoneSelecionado}" />
+                                    <p:confirm header="Excluir Telefone"
                                                message="Tem certeza que deseja excluir o registro?"
                                                icon="ui-icon-alert" />
                                 </p:commandButton>
@@ -77,7 +77,7 @@
                     <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
                         <p:commandButton value="Sim" type="button"
                                          styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-                        <p:commandButton value="NÃ£o" type="button"
+                        <p:commandButton value="Não" type="button"
                                          styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
                     </p:confirmDialog>
                 </h:form>
